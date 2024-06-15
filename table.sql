@@ -47,7 +47,7 @@ insert into Departments (Department_id, Department_name ,Location,Employees_id) 
 insert into Departments (Department_id, Department_name ,Location,Employees_id) values (145, 'Contability', 'Bucharest', 3);
 insert into Departments (Department_id, Department_name ,Location,Employees_id) values (131, 'Assistant Manager', 'Bucharest', 4);
 
-update Departments set Emoyees_id = 1
+update Departments set Employees_id = 1
 where Location like 'Bucharest' ;
 select * from employees;
 
