@@ -11,6 +11,8 @@ insert into Departments (Department_id, Department_name ,Location) values (125, 
 insert into Departments (Department_id, Department_name ,Location) values (145, 'Contability', 'Bucharest');
 insert into Departments (Department_id, Department_name ,Location) values (131, 'Assistant Manager', 'Bucharest');
 
+Delete table Departments;
+
 create table Employees (
 Employee_id int primary key,
 First_name varchar(20) NOT NULL,
@@ -60,6 +62,8 @@ insert into Details (Salary,Department_id, Employee_id) values (435,125,2);
 insert into Details (Salary,Department_id, Employee_id) values (567,145,3);
 insert into Details(Salary,Department_id, Employee_id) values (457,131,4);
 
+select Salary , Department_id from Details;
+
 create table Location(
 Location_id int primary key,
 City varchar (50),
@@ -77,9 +81,16 @@ where Location_id like '14%'
 group by Location_id
 order by count(*) asc;
 
+select count(*) as 'Location_id'
+from Location 
+where Employee_id =2
+and City ='Cluj';
+
 select * from Location
 where City like 'Bucharest';
 
+update Employees set hourly_pay = '15'
+where Employee_id = 1;
 
 select max(Salary) from Details;
 
@@ -87,6 +98,11 @@ select min(Salary) from Details;
 
 select* from Details
 where Salary >= '543';
+
+select* from employees
+where First_name like 'Ion'
+and Hourly_pay = 14.2
+or Age = 35 ;
 
 update Employees set Email = 'radulescu.andrei2@gmail.com'
 where Department_id = 124 ;
@@ -96,6 +112,8 @@ where Department_id = 125 ;
 
 select * from departments
 where Department_name = 'PR';
+
+select count(*) from employees;
 
 select* from Departments
 where Department_id like '12_';
@@ -122,6 +140,10 @@ where p.Manager_name not in ('Mircea', 'Claudiu');
 select Hourly_pay
 from Employees
 where Hourly_pay < 90;
+
+select count(*) as 'Employee_id'
+from employees
+where Age >=35;
 
 select Location 
 from Departments
